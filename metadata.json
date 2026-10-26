@@ -1,0 +1,8 @@
+{
+  "name": "FoodInside - Modern Food Delivery & Admin Dashboard",
+  "description": "Professional food delivery platform and comprehensive administrative operations dashboard for live orders, kitchen tracking, menu stock, restaurant branches, and rider dispatch.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

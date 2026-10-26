@@ -1,0 +1,154 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "User account profile for authentication and role identification",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "The unique Firebase Auth UID"
+        },
+        "email": {
+          "type": "string",
+          "description": "User email address"
+        },
+        "displayName": {
+          "type": "string",
+          "description": "User display name"
+        },
+        "role": {
+          "type": "string",
+          "enum": ["customer", "admin", "super_admin"],
+          "description": "Access role within the application"
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "ISO timestamp of account creation"
+        }
+      },
+      "required": ["id", "email", "role"]
+    },
+    "OrderItem": {
+      "title": "OrderItem",
+      "description": "Line item inside a FoodInside order",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string", "maxLength": 100 },
+        "quantity": { "type": "number" },
+        "price": { "type": "number" },
+        "category": { "type": "string", "maxLength": 50 }
+      },
+      "required": ["id", "name", "quantity", "price"]
+    },
+    "Order": {
+      "title": "Order",
+      "description": "Food order placed by a customer or logged in operations",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique Order ID e.g. #FI-123456"
+        },
+        "customerName": {
+          "type": "string",
+          "maxLength": 100
+        },
+        "customerPhone": {
+          "type": "string",
+          "maxLength": 30
+        },
+        "address": {
+          "type": "string",
+          "maxLength": 300
+        },
+        "branch": {
+          "type": "string",
+          "maxLength": 100
+        },
+        "total": {
+          "type": "number"
+        },
+        "subtotal": {
+          "type": "number"
+        },
+        "deliveryCharge": {
+          "type": "number"
+        },
+        "status": {
+          "type": "string",
+          "enum": ["new", "cooking", "out_for_delivery", "delivered", "cancelled"]
+        },
+        "createdAt": {
+          "type": "string"
+        },
+        "paymentMethod": {
+          "type": "string",
+          "enum": ["UPI / Online", "Cash on Delivery", "Credit Card"]
+        },
+        "isPaid": {
+          "type": "boolean"
+        },
+        "prepTimeMinutes": {
+          "type": "number"
+        },
+        "specialInstructions": {
+          "type": "string",
+          "maxLength": 300
+        }
+      },
+      "required": ["id", "customerName", "total", "status", "createdAt"]
+    },
+    "MenuItem": {
+      "title": "MenuItem",
+      "description": "Menu food item with stock status",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string", "maxLength": 100 },
+        "category": { "type": "string", "maxLength": 50 },
+        "price": { "type": "number" },
+        "inStock": { "type": "boolean" },
+        "unitsRemaining": { "type": "number" },
+        "prepTimeMinutes": { "type": "number" },
+        "rating": { "type": "number" },
+        "image": { "type": "string", "maxLength": 500 },
+        "description": { "type": "string", "maxLength": 300 }
+      },
+      "required": ["id", "name", "category", "price", "inStock"]
+    },
+    "ChatMessage": {
+      "title": "ChatMessage",
+      "description": "Multi-turn Gemini AI conversational message",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "role": { "type": "string", "enum": ["user", "model", "system"] },
+        "text": { "type": "string", "maxLength": 10000 },
+        "timestamp": { "type": "string" },
+        "userId": { "type": "string" },
+        "modelUsed": { "type": "string" }
+      },
+      "required": ["id", "role", "text", "timestamp"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "UserProfile",
+      "description": "User profiles and credentials"
+    },
+    "/orders/{orderId}": {
+      "schema": "Order",
+      "description": "Live and completed food delivery orders"
+    },
+    "/menu_items/{itemId}": {
+      "schema": "MenuItem",
+      "description": "Food menu catalog and stock levels"
+    },
+    "/chat_messages/{messageId}": {
+      "schema": "ChatMessage",
+      "description": "Gemini AI multi-turn assistant chat history"
+    }
+  }
+}
