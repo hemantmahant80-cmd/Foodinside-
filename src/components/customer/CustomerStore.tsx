@@ -276,7 +276,7 @@ export const CustomerStore: React.FC<CustomerStoreProps> = ({ onSwitchToAdmin })
       {/* Hero Banner Section */}
             <section className="relative overflow-hidden rounded-2xl h-64 sm:h-72 mb-8 border border-orange-500/25 shadow-xl shadow-orange-950/10">
         <img 
-          src="https://unsplash.com" 
+           src="https://unsplash.com"
           alt="Delicious burger and fries banner" 
           className="absolute inset-0 w-full h-full object-cover object-center z-0"
           referrerPolicy="no-referrer"
