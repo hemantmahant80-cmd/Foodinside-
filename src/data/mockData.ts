@@ -15,7 +15,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     prepTimeMinutes: 8,
     rating: 4.9,
     dailySold: 124,
-    image: 'https://images.unsplash.com/photo-1606491956689-2ea866880c84?w=600&auto=format&fit=crop&q=80',
+    image: 'https://unsplash.com/photos/burger-with-vegetable-on-brown-wooden-tray-I7A_pHLcQK8
     description: 'Mumbai style, spicy & tasty batata vada with garlic chutney in buttered pav',
     isPopular: true,
   },
