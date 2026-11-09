@@ -274,19 +274,17 @@ export const CustomerStore: React.FC<CustomerStoreProps> = ({ onSwitchToAdmin })
       </header>
 
       {/* Hero Banner Section */}
-      <section className="relative bg-stone-900 text-white overflow-hidden py-10 lg:py-16 px-4 lg:px-12">
-        {/* Background Image Scrim */}
-        <div className="absolute inset-0 z-0">
-          <img
-            src=" https://unsplash.com/photos/burger-with-vegetable-on-brown-wooden-tray-I7A_pHLcQK8"
-            alt="Delicious burger and fries hero"
-            className="w-full h-full object-cover opacity-35"
-            referrerPolicy="no-referrer"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-black/30" />
-        </div>
+            <section className="relative overflow-hidden rounded-2xl h-64 sm:h-72 mb-8 border border-orange-500/25 shadow-xl shadow-orange-950/10">
+        <img 
+          src="https://unsplash.com" 
+          alt="Delicious burger and fries banner" 
+          className="absolute inset-0 w-full h-full object-cover object-center z-0"
+          referrerPolicy="no-referrer"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent z-10" />
+      </section>
 
-        <div className="relative z-10 max-w-2xl">
+      <div className="relative z-10 max-w-2xl">
           <div className="flex items-center gap-2 text-orange-500 text-xs font-bold uppercase tracking-wider mb-2">
             <span>Fresh</span>
             <span>•</span>
