@@ -278,7 +278,7 @@ export const CustomerStore: React.FC<CustomerStoreProps> = ({ onSwitchToAdmin })
         {/* Background Image Scrim */}
         <div className="absolute inset-0 z-0">
           <img
-            src="https://images.unsplash.com/photo-1550547660-d9450f859349?w=1600&auto=format&fit=crop&q=80"
+            src=" https://unsplash.com/photos/burger-with-vegetable-on-brown-wooden-tray-I7A_pHLcQK8"
             alt="Delicious burger and fries hero"
             className="w-full h-full object-cover opacity-35"
             referrerPolicy="no-referrer"
