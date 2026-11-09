@@ -295,7 +295,7 @@ export const CustomerStore: React.FC<CustomerStoreProps> = ({ onSwitchToAdmin })
 
           <h1 className="text-3xl lg:text-5xl font-extrabold tracking-tight leading-tight text-white mb-3">
             Your Favorite Food <br />
-            Now at Your <span className="text-orange-500">Doorstep</span>
+            Now at Your Your food, inside your doorstep <span className="text-orange-500">Doorstep</span>
           </h1>
 
           <p className="text-sm text-slate-300 mb-6 leading-relaxed">
